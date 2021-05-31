@@ -1,11 +1,12 @@
 import express from 'express';
 
+import { getPosts } from '../controllers/post.js'
+
 const router = express.Router();
 
 // The callback function will be executed once someone visits 
-// localhost:5000/posts
-router.get('/', (req, res) => {
-    res.send("This works!");
-})
+router.get('/', getPosts);
+router.post('/', createPost);
+
 
 export default router;
